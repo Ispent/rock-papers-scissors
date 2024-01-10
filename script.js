@@ -63,7 +63,7 @@ function playRound(playerChoice, computerChoice) {
 }
 
 function game() {
-  for (i = 0; i < 5; i++) {
+  for (let i = 0; i < 5; i++) {
     playRound(getPlayerChoice(), getComputerChoice())
     if (endCheck(playerScore, computerScore) == 'w') {
       alert('You won the games!');
