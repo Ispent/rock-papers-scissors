@@ -25,6 +25,17 @@ function getPlayerChoice() {
   }
 }
 
+function getBtnPlayerChoice() {
+  const buttons = document.querySelectorAll('.rpc');
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      return(button.id);
+    });
+  });
+}
+
+
 function capitalize(choice) {
   return choice.charAt(0).toUpperCase() + choice.slice(1);
 }
@@ -63,28 +74,26 @@ function playRound(playerChoice, computerChoice) {
 }
 
 function game() {
-  for (let i = 0; i < 5; i++) {
-    playRound(getPlayerChoice(), getComputerChoice())
+    playRound(getBtnPlayerChoice(), getComputerChoice())
     if (endCheck(playerScore, computerScore) == 'w') {
-      alert('You won the games!');
-      break;
+      alert('You won!');
     } else if (endCheck(playerScore, computerScore) == 'l') {
-      alert('You lost the games!');
-      break;
+      alert('You lost!');
     } else if (endCheck(playerScore, computerScore) == 't') {
       alert('You tied!');
-      break;
     }
-  }
 }
 
 function endCheck(playerScore, computerScore) {
-  if (playerScore === 3) {
+  if (playerScore === 1) {
     return 'w'
-  } else if (computerScore === 3) {
+  } else if (computerScore === 1) {
     return 'l'
+  } else if (playerScore == computerScore) {
+    return 't'
   }
 }
 
 
 game()
+getBtnPlayerChoice();
