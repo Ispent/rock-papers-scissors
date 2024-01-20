@@ -16,7 +16,7 @@ function getPlayerChoice() {
   let chosen = true;
   while (chosen) {
     let selection = (prompt('Enter your Input: ')).toLowerCase();
-    if (selection == "rock" || selection == 'scissor' || selection == 'paper') {
+    if (selection == "rock" || selection == 'scissors' || selection == 'paper') {
       chosen = false;
       return capitalize(selection);
     } else {
@@ -83,9 +83,7 @@ function endCheck(playerScore, computerScore) {
     return 'w'
   } else if (computerScore === 3) {
     return 'l'
-  } else if (playerScore === computerScore) {
-    return 't'
-  } 
+  }
 }
 
 
