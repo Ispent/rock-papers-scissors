@@ -8,18 +8,37 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div>
-    <button id='Rock' class='rock rpc'>Rock</button>
-    <button id='Paper' class='paper rpc'>Paper</button>
-    <button id='Scissors' class='scissors rpc'>Scissors</button>
+  <div class="background">
+    <div class='rps'>
+      <div class="heading">Rock-Paper-Scissors</div>
+      <div class='results'>
+        <div class="player">
+          <p>Player</p>
+          <div class="playerResult"></div>
+          <input class="pSCore" readonly name="playerScore">
+        </div>
+
+        <div class="computer">
+          <p>CPU</p>
+          <div class="computerResult"></div>
+          <input class="cSCore" readonly name="computerSCore">
+        </div>
+      </div>
+
+      <div class="options">
+        <button id='Rock' class='rock rpc'>Rock</button>
+        <button id='Paper' class='paper rpc'>Paper</button>
+        <button id='Scissors' class='scissors rpc'>Scissors</button>
+      </div>
+      
+      <div class="resultText">
+      </div>
+    </div>
   </div>
-  <div>
-    <input class="pSCore" readonly name="playerScore">
-    <input class="cSCore" readonly name="computerSCore">
-  </div>
+
   <div id="winScreen" class="popup">
     <div class="popupContent">
-      <h1>You Won!</h1>
+      <h1 class="displayText">You Won!</h1>
       <button id='closePopup'>
         Play Again
       </button>
